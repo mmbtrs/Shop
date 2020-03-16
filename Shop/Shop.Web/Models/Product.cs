@@ -6,7 +6,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    public class Product
+    public class Product : IEntity
     {
         public int Id { get; set; }
 
@@ -15,7 +15,8 @@
         [Display(Name = "Nombre")]
         public string Name { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
+        //TODO: corregir el precio al editar cambia los decimales
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         [Display(Name = "Precio")]
         public decimal Price { get; set; }
 
@@ -33,6 +34,7 @@
 
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         public double Stock { get; set; }
+        public User User { get; set; }
 
     }
 }
