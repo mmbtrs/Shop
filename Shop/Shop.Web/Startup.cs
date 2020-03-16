@@ -36,7 +36,6 @@ namespace Shop.Web
                 cfg.Password.RequiredLength = 6;
             }).AddEntityFrameworkStores<DataContext>();
 
-
             services.AddDbContext<DataContext>(cfg =>
             {
                 cfg.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
@@ -44,6 +43,7 @@ namespace Shop.Web
 
             services.AddTransient<SeedDb>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<IUserHelper, UserHelper>();
         }
 
