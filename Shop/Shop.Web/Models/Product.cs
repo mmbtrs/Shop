@@ -11,7 +11,7 @@
         public int Id { get; set; }
 
         [MaxLength(50, ErrorMessage = "El campo {0} solo puede contener un máximo de {1} caracteres")]
-        [Required]
+        [Required (ErrorMessage = "El campo {0} es requerido") ]
         [Display(Name = "Nombre")]
         public string Name { get; set; }
 
